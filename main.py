@@ -22,9 +22,12 @@ def race_setup(racer_color,racer_start):
     racers.append(racer)
 
 def race_start(racers):
-  for racer in racers:
-    racer.pendown()
-    racer.forward(distance)
+  is_race_on=True
+  while is_race_on:
+    for i in range(len(racers)):
+      racers[i].forward(random_speed())
+      if racers[i].xcor()>distance:
+        is_race_on=False
     
 
 race_setup(racer_color,racer_start)
