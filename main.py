@@ -25,9 +25,11 @@ def race_start(racers):
   is_race_on=True
   while is_race_on:
     for i in range(len(racers)):
+      racers[i].pendown()
       racers[i].forward(random_speed())
       if racers[i].xcor()>distance:
         is_race_on=False
+        screen.print(f"Racer {i} won the race")
     
 
 race_setup(racer_color,racer_start)
